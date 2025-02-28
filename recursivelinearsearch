@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int LinearSearchRecursive(int arr[],int size,int key,int index=0)
+{
+  if(index==size){
+    return -1;
+  }
+  if(arr[index]==key){
+    return index;
+  }
+  return LinearSearchRecursive(arr,size,key,index+1);
+}
+int main(){
+int n,key;
+cout<<"enter the number of elements:";
+cin>>n;
+int arr[n];
+cout<<"Enter "<<n<<" elements:";
+for(int i=0;i<n;i++)
+    cin>>arr[i];
+    cout<<"enter value to search:";
+    cin>>key;
+
+    int result=LinearSearchRecursive(arr,n,key);
+    if(result!=-1)
+        cout<<"Element found at index"<<result<<endl;
+    else
+        cout<<"element not found in the array."<<endl;
+    return 0;
+}
